@@ -1,0 +1,1196 @@
+{
+	"info": {
+		"_postman_id": "5011e3ca-fc1b-4931-b0aa-14129dcb193b",
+		"name": "api_project",
+		"description": "Personas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43885560",
+		"_collection_link": "https://laura-2526204.postman.co/workspace/23088b66-552a-4e5b-8109-9a4377ce9463/collection/43885560-5011e3ca-fc1b-4931-b0aa-14129dcb193b?action=share&source=collection_link&creator=43885560"
+	},
+	"item": [
+		{
+			"name": "Personas",
+			"item": [
+				{
+					"name": "Lista",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/personas/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"personas",
+								""
+							]
+						},
+						"description": "StartFragment\n\n- **Método:** `GET`\n    \n- **Endpoint:** `/api/personas/`\n    \n- Modelos principales:\n    \n    - `id` (auto)\n        \n    - `nombre` (str)\n        \n    - `apellido` (str)\n        \n    - `documento` (str, único)\n        \n- **Descripción:** Obtiene todas las personas registradas.\n    \n- **Response (404):** En caso de no encontrar\n    \n\n```\n{\n  \"detail\": \"No se encontraron personas\"\n}\n\n ```\n\nEndFragment"
+					},
+					"response": [
+						{
+							"name": "Lista",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/personas/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"personas",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 03 Sep 2025 15:34:49 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.11"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "529"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"detail\": \"Listado de personas\",\n    \"data\": [\n        {\n            \"id_persona\": 3,\n            \"nombre\": \"Nicolas\",\n            \"apellido\": \"C.\",\n            \"documento\": \"12347\",\n            \"email\": \"nicoc@test.com\",\n            \"activo\": true\n        },\n        {\n            \"id_persona\": 2,\n            \"nombre\": \"Laura Castiblanco\",\n            \"apellido\": \"C.\",\n            \"documento\": \"12345\",\n            \"email\": \"laura@test.com\",\n            \"activo\": true\n        },\n        {\n            \"id_persona\": 5,\n            \"nombre\": \"Catalina\",\n            \"apellido\": \"Ramirez\",\n            \"documento\": \"98765\",\n            \"email\": \"cataina@gmail.com\",\n            \"activo\": true\n        },\n        {\n            \"id_persona\": 7,\n            \"nombre\": \"Daniela\",\n            \"apellido\": \"Castiblanco\",\n            \"documento\": \"12344\",\n            \"email\": \"dcast@gmail.com\",\n            \"activo\": true\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Crear",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/personas/crear/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"personas",
+								"crear",
+								""
+							]
+						},
+						"description": "StartFragment\n\n- **Método:** `POST`\n    \n- **Endpoint:** `/api/personas/crear/`\n    \n- **Descripción:** Crea una nueva persona en la base de datos\n    \n\nEndFragment"
+					},
+					"response": [
+						{
+							"name": "Crear",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\": \"Enrique\",\r\n    \"apellido\": \"Perez\",\r\n    \"documento\": \"12334\",\r\n    \"email\": \"victoria@gmail.com\",\r\n    \"activo\": true\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/personas/crear/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"personas",
+										"crear",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 03 Sep 2025 15:35:38 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.11"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "181"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"body": "{\n    \"success\": true,\n    \"detail\": \"Persona creada correctamente\",\n    \"data\": {\n        \"id_persona\": 8,\n        \"nombre\": \"Enrique\",\n        \"apellido\": \"Perez\",\n        \"documento\": \"12334\",\n        \"email\": \"victoria@gmail.com\",\n        \"activo\": true\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Actualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/personas/actualizar/6/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"personas",
+								"actualizar",
+								"6",
+								""
+							]
+						},
+						"description": "StartFragment\n\n- **Método:** `PUT`\n    \n- **Endpoint:** `/api/personas/actualizar/{id}/`\n    \n- **Descripción:** Actualiza los datos de una persona por su ID.\n    \n- **Response (400 – email ya existe):**\n    \n\n```\n{\n  \"email\": [\n    \"Ya existe ese correo\"\n  ]\n}\n\n ```\n\nEndFragment"
+					},
+					"response": [
+						{
+							"name": "Actualizar",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \r\n    \"nombre\": \"Enrique\",\r\n    \"apellido\": \"Perez\",\r\n    \"documento\": \"12334\",\r\n    \"email\": \"enrper09@gmail.com\",\r\n    \"activo\": true\r\n}\r\n\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/personas/actualizar/8/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"personas",
+										"actualizar",
+										"8",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 03 Sep 2025 15:38:38 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.11"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "PUT, PATCH, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "186"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"body": "{\n    \"success\": true,\n    \"detail\": \"Persona actualizada correctamente\",\n    \"data\": {\n        \"id_persona\": 8,\n        \"nombre\": \"Enrique\",\n        \"apellido\": \"Perez\",\n        \"documento\": \"12334\",\n        \"email\": \"enrper09@gmail.com\",\n        \"activo\": true\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Eliminar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/personas/eliminar/8/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"personas",
+								"eliminar",
+								"8",
+								""
+							]
+						},
+						"description": "StartFragment\n\n- **Método:** `DELETE`\n    \n- **Endpoint:** `/api/personas/eliminar/{id}/`\n    \n- **Descripción:** Elimina una persona según su ID.\n    \n- **Response (204):**\n    \n\n```\n{\n  \"success\": true,\n  \"detail\": \"Persona eliminada correctamente\"\n}\n\n ```\n\nEndFragment"
+					},
+					"response": [
+						{
+							"name": "Eliminar",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/personas/eliminar/9/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"personas",
+										"eliminar",
+										"9",
+										""
+									]
+								}
+							},
+							"_postman_previewlanguage": "",
+							"header": [],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Buscar por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/personas/documento/98765/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"personas",
+								"documento",
+								"98765",
+								""
+							]
+						},
+						"description": "StartFragment\n\n- **Método:** `GET`\n    \n- **Endpoint:** `/api/personas/documento/{documento}/`\n    \n- **Descripción:** Retorna la persona que tenga el documento especificado.\n    \n- **Response (404):**\n    \n\n```\n{\n  \"detail\": \"No se encontra una persona en ese documento\"\n}\n\n ```\n\nEndFragment"
+					},
+					"response": [
+						{
+							"name": "Buscar por ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/personas/documento/12345/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"personas",
+										"documento",
+										"12345",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 03 Sep 2025 15:43:01 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.11"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "174"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"body": "{\n    \"success\": true,\n    \"detail\": \"Persona encontrada\",\n    \"data\": {\n        \"id_persona\": 2,\n        \"nombre\": \"Laura Castiblanco\",\n        \"apellido\": \"C.\",\n        \"documento\": \"12345\",\n        \"email\": \"laura@test.com\",\n        \"activo\": true\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Tareas",
+			"item": [
+				{
+					"name": "Lista",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/tareas/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tareas",
+								""
+							]
+						},
+						"description": "StartFragment\n\n- **Método:** `GET`\n    \n- **Endpoint:** `/api/tareas/`\n    \n- Modelos principales:\n    \n    - `id` (auto)\n        \n    - `titulo` (str)\n        \n    - `descripcion` (text)\n        \n    - `fecha_creacion` (date)\n        \n    - `persona` (FK → Persona)\n        \n- **Descripción:** Obtiene todas las tareas registradas.\n    \n\nEndFragment"
+					},
+					"response": [
+						{
+							"name": "Lista",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/tareas/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"tareas",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 03 Sep 2025 15:45:28 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.11"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "628"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id_tarea\": 1,\n        \"titulo\": \"Estudiar Django\",\n        \"descripcion\": \"Repasar generics y serializers\",\n        \"fecha_limite\": \"2025-09-11\",\n        \"persona\": 2\n    },\n    {\n        \"id_tarea\": 3,\n        \"titulo\": \"Estudiar Metodologias agiles\",\n        \"descripcion\": \"Repasar librerias\",\n        \"fecha_limite\": \"2025-09-25\",\n        \"persona\": 2\n    },\n    {\n        \"id_tarea\": 4,\n        \"titulo\": \"Estudiar ingles\",\n        \"descripcion\": \"Repasar librerias\",\n        \"fecha_limite\": \"2025-09-30\",\n        \"persona\": 2\n    },\n    {\n        \"id_tarea\": 5,\n        \"titulo\": \"Estudiar matemáticas y español\",\n        \"descripcion\": \"Repasar operaciones y leer libro\",\n        \"fecha_limite\": \"2025-10-02\",\n        \"persona\": 2\n    },\n    {\n        \"id_tarea\": 7,\n        \"titulo\": \"Enviar curso\",\n        \"descripcion\": \"De ingles\",\n        \"fecha_limite\": \"2025-10-13\",\n        \"persona\": 3\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Crear",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/tareas/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tareas",
+								""
+							]
+						},
+						"description": "StartFragment\n\n- **Método:** `POST`\n    \n- **Endpoint:** `/api/tareas/`\n    \n- **Descripción:** Crea una nueva tarea y la asigna a una persona existente.\n    \n\nEndFragment"
+					},
+					"response": [
+						{
+							"name": "Crear",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"titulo\": \"Ver tarea \",\r\n  \"descripcion\": \"De artistica\",\r\n  \"fecha_limite\": \"2025-12-15\",\r\n  \"persona\": 3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/tareas/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"tareas",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 03 Sep 2025 15:48:09 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.11"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "105"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"body": "{\n    \"id_tarea\": 11,\n    \"titulo\": \"Ver tarea\",\n    \"descripcion\": \"De artistica\",\n    \"fecha_limite\": \"2025-12-15\",\n    \"persona\": 3\n}"
+						}
+					]
+				},
+				{
+					"name": "Actualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/tareas/actualizar/11/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tareas",
+								"actualizar",
+								"11",
+								""
+							]
+						},
+						"description": "StartFragment\n\n- **Método:** `PUT`\n    \n- **Endpoint:** `/api/tareas/actualizar/{id}/`\n    \n- **Descripción:** Actualiza una tarea existente según su ID.\n    \n\nEndFragment"
+					},
+					"response": [
+						{
+							"name": "Actualizar",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"titulo\": \"Ver tarea \",\r\n  \"descripcion\": \"De emprendimiento\",\r\n  \"fecha_limite\": \"2025-12-16\",\r\n  \"persona\": 3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/tareas/actualizar/11/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"tareas",
+										"actualizar",
+										"11",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 03 Sep 2025 15:49:30 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.11"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "PUT, PATCH, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "177"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"body": "{\n    \"success\": true,\n    \"detail\": \"Tarea actualizada correctamente\",\n    \"data\": {\n        \"id_tarea\": 11,\n        \"titulo\": \"Ver tarea\",\n        \"descripcion\": \"De emprendimiento\",\n        \"fecha_limite\": \"2025-12-16\",\n        \"persona\": 3\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Eliminar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/tareas/eliminar/8/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tareas",
+								"eliminar",
+								"8",
+								""
+							]
+						},
+						"description": "StartFragment\n\n- **Método:** `DELETE`\n    \n- **Endpoint:** `/api/tareas/{id}/`\n    \n- **Descripción:** Elimina una tarea específica.\n    \n- **Response (204):**\n    \n\n```\n{\n  \"success\": true,\n  \"detail\": \"Tarea eliminada correctamente\"\n}\n\n ```\n\nEndFragment"
+					},
+					"response": [
+						{
+							"name": "Eliminar",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"titulo\": \"Ver video \",\r\n  \"descripcion\": \"De ciencias\",\r\n  \"fecha_limite\": \"2025-12-14\",\r\n  \"persona\": 3\r\n}"
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/tareas/eliminar/10/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"tareas",
+										"eliminar",
+										"10",
+										""
+									]
+								}
+							},
+							"_postman_previewlanguage": "",
+							"header": [],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Buscar tarea por fecha",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/tareas/fecha/2025-10-13/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tareas",
+								"fecha",
+								"2025-10-13",
+								""
+							]
+						},
+						"description": "StartFragment\n\n- **Método:** `GET`\n    \n- **Endpoint:** `/api/tareas/fecha/{yyyy-mm-dd}/`\n    \n- **Descripción:** Retorna todas las tareas que vencen en la fecha indicada.\n    \n- **Response (404):**\n    \n\n```\n{\n  \"detail\": \"No se encontraron tareas en esa fecha\"\n}\n\n ```\n\nEndFragment"
+					},
+					"response": [
+						{
+							"name": "Buscar tarea por fecha",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/tareas/fecha/2025-10-13/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"tareas",
+										"fecha",
+										"2025-10-13",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 03 Sep 2025 15:51:00 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.11"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "160"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"detail\": \"Tareas encontradas\",\n    \"data\": [\n        {\n            \"id_tarea\": 7,\n            \"titulo\": \"Enviar curso\",\n            \"descripcion\": \"De ingles\",\n            \"fecha_limite\": \"2025-10-13\",\n            \"persona\": 3\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Buscar tarea por rango de fechas",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/tareas/rango/2025-09-30/2025-10-13/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tareas",
+								"rango",
+								"2025-09-30",
+								"2025-10-13",
+								""
+							]
+						},
+						"description": "StartFragment\n\n- **Método:** `GET`\n    \n- **Endpoint:** `/api/tareas/rango/{fecha_inicio}/{fecha_fin}/`\n    \n- **Descripción:** Retorna todas las tareas cuyo vencimiento esté entre las dos fechas.\n    \n- **Response (404):**\n    \n\n```\n{\n  \"detail\": \"No se encontraron tareas en ese rango de fechas\"\n}\n\n ```\n\nEndFragment"
+					},
+					"response": [
+						{
+							"name": "Buscar tarea por rango de fechas",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"titulo\": \"Estudiar Django\",\r\n  \"descripcion\": \"Repasar generics y serializers\",\r\n  \"fecha_limite\": \"2025-09-10\",\r\n  \"persona\": 2\r\n}"
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/tareas/rango/2025-09-30/2025-10-13/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"tareas",
+										"rango",
+										"2025-09-30",
+										"2025-10-13",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 03 Sep 2025 15:22:48 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.11"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "424"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"detail\": \"Tareas encontradas\",\n    \"data\": [\n        {\n            \"id_tarea\": 4,\n            \"titulo\": \"Estudiar ingles\",\n            \"descripcion\": \"Repasar librerias\",\n            \"fecha_limite\": \"2025-09-30\",\n            \"persona\": 2\n        },\n        {\n            \"id_tarea\": 5,\n            \"titulo\": \"Estudiar matemáticas y español\",\n            \"descripcion\": \"Repasar operaciones y leer libro\",\n            \"fecha_limite\": \"2025-10-02\",\n            \"persona\": 2\n        },\n        {\n            \"id_tarea\": 7,\n            \"titulo\": \"Enviar curso\",\n            \"descripcion\": \"De ingles\",\n            \"fecha_limite\": \"2025-10-13\",\n            \"persona\": 3\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Buscar tarea por persona",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/tareas/persona/2/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tareas",
+								"persona",
+								"2",
+								""
+							]
+						},
+						"description": "StartFragment\n\n- **Método:** `GET`\n    \n- **Endpoint:** `/api/tareas/persona/{id_persona}/`\n    \n- **Descripción:** Retorna todas las tareas asignadas a la persona indicada.\n    \n- **Response (404):**\n    \n\n```\n{\n  \"detail\": \"No se encontraron tareas para esa persona\"\n}\n\n ```\n\nEndFragment"
+					},
+					"response": [
+						{
+							"name": "Buscar tarea por persona",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"titulo\": \"Estudiar Django\",\r\n  \"descripcion\": \"Repasar generics y serializers\",\r\n  \"fecha_limite\": \"2025-09-10\",\r\n  \"persona\": 2\r\n}"
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/tareas/persona/2/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"tareas",
+										"persona",
+										"2",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 03 Sep 2025 15:23:16 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.11"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "577"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"detail\": \"Tareas encontradas\",\n    \"data\": [\n        {\n            \"id_tarea\": 1,\n            \"titulo\": \"Estudiar Django\",\n            \"descripcion\": \"Repasar generics y serializers\",\n            \"fecha_limite\": \"2025-09-11\",\n            \"persona\": 2\n        },\n        {\n            \"id_tarea\": 3,\n            \"titulo\": \"Estudiar Metodologias agiles\",\n            \"descripcion\": \"Repasar librerias\",\n            \"fecha_limite\": \"2025-09-25\",\n            \"persona\": 2\n        },\n        {\n            \"id_tarea\": 4,\n            \"titulo\": \"Estudiar ingles\",\n            \"descripcion\": \"Repasar librerias\",\n            \"fecha_limite\": \"2025-09-30\",\n            \"persona\": 2\n        },\n        {\n            \"id_tarea\": 5,\n            \"titulo\": \"Estudiar matemáticas y español\",\n            \"descripcion\": \"Repasar operaciones y leer libro\",\n            \"fecha_limite\": \"2025-10-02\",\n            \"persona\": 2\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
