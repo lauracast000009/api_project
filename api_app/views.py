@@ -6,6 +6,7 @@ from .serializers import PersonaSerializer
 from django.shortcuts import get_object_or_404
 from django.utils.dateparse import parse_date
 
+# Acciones a realizar para cada endponit
 # Listar personas
 class PersonaList(generics.ListAPIView):
     queryset = Persona.objects.all()
